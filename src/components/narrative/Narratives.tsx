@@ -26,8 +26,17 @@ export default function NarrativePage() {
     );
   }
 
-  // image file should live in public/images and referenced by item.image (recommended)
-  const imageUrl = `/images/${item.image}`;
+  // Try to resolve image from src/assets/images via Vite's glob (works in dev & build).
+  // If not found, fall back to public/images using BASE_URL.
+  const importedImages = import.meta.glob("../../assets/images/*", {
+    eager: true,
+    query: "?url",
+    import: "default",
+  }) as Record<string, string>;
+  const importKey = `../../assets/images/${item.image}`;
+  const importedUrl = importedImages[importKey];
+  const publicUrl = `${import.meta.env.BASE_URL}images/${item.image}`;
+  const imageUrl = importedUrl ?? publicUrl;
 
   return (
     <div className="narrative-page">

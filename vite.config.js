@@ -1,7 +1,8 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
-// https://vite.dev/config/
+// site will be served at https://samuelsotogit.github.io/Gospel-Website/
 export default defineConfig({
+  base: "/Gospel-Website/",
   plugins: [react()],
-})
+});

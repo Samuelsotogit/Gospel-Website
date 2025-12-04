@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import React from "react";
 import narratives from "../../data/narratives.json";
 import "./Home.css";
+import mission from "../../assets/images/mission.jpeg";
 
 const LandingPage = () => {
   return (
@@ -14,11 +15,7 @@ const LandingPage = () => {
         </p>
       </section>
       <section id="landing-page-image-container" className="image-container">
-        <img
-          id="landing-page-image"
-          src="/images/mission.jpeg"
-          alt="Landing Page Visual"
-        />
+        <img id="landing-page-image" src={mission} alt="Landing Page Visual" />
       </section>
     </div>
   );
