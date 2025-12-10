@@ -1,6 +1,4 @@
-import { useEffect, useState } from "react";
 import React from "react";
-import narratives from "../../data/narratives.json";
 import "./Home.css";
 import mission from "../../assets/images/mission.jpeg";
 
@@ -12,6 +10,10 @@ const LandingPage = () => {
         <p>
           This site presents the principles of the gospel of Jesus Christ, and
           invites you to ponder how you can live it more fully in your life.
+        </p>
+        <p>
+          Note: This is my Worship Project. Each scripture here is connected to
+          it by teaching the gospel of Jesus Christ through the Book of Mormon.
         </p>
       </section>
       <section id="landing-page-image-container" className="image-container">
